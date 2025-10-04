@@ -1,3 +1,9 @@
+*{
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .hidden{
   display: none;
 }
@@ -8,7 +14,6 @@
   /* overflow: hidden; */
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 2rem;
   flex-direction: column;
   /* flex-wrap: wrap; */
