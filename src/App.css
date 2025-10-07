@@ -19,12 +19,32 @@
   /* flex-wrap: wrap; */
 }
 
+.carswrapper{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
 .cars{
   border: 1px solid red;
-  width: 300px;
-  height: 100px;
+  width: 400px;
+  background-color: rgb(196, 196, 196);
+  border-radius: 20px;
+  overflow: hidden;
+  color: white;
+}
+
+.texts{
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: 1rem;
   padding: 20px 0;
+}
+
+img{
+  width: 100%;
 }

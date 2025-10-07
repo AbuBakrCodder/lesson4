@@ -11,7 +11,7 @@ function App() {
 
     ]
   )
-  let [modalus, setModal] =useState(false)
+  let [modalus, setModal] = useState(false)
   let [active, setActive] = useState(false)
 
   let h2 = document.querySelector("h2")
@@ -21,21 +21,23 @@ function App() {
       console.log(user);
       return user.id !== id
     })
-      setUser(filter)
+    setUser(filter)
   }
 
-      let modalactive = document.querySelector(".modalactive")
- function check(active) {
+  let modalactive = document.querySelector(".modalactive")
+  function check(active) {
     setActive(prev => !prev)
   }
 
   return (
-    <div className='App' onClick={()=>{setModal(false)}}>
+    <div className='App' onClick={() => { setModal(false) }}>
       <div className={`modalactive ${active ? "" : "hidden"}`}></div>
-      <Navbar modalactive={check} modaln={setModal}/>
+      <Navbar modalactive={check} modaln={setModal} />
       <h2 className='hidden'>No cars</h2>
-      <Users users={users} deletebtn={deletebtn}/>
-      {modalus && <Modal modaln={setModal} setuser={setUser} modalactive={check}/>}
+      <div className='carswrapper'>
+        <Users users={users} deletebtn={deletebtn} />
+      </div>
+      {modalus && <Modal modaln={setModal} setuser={setUser} modalactive={check} />}
       {users.length === 0 && (<h2>No cars</h2>)}
     </div>
   )

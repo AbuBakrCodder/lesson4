@@ -1,14 +1,17 @@
-function Users({ users, deletebtn}) {
+function Users({ users, deletebtn }) {
     return (
         <div>
             {
                 users.map((user) => {
                     return (
                         <div key={user.id} className='cars'>
-                            <h1>
-                                {user.name}
-                            </h1>
-                            <button onClick={()=>{deletebtn(user.id)}}>Delete</button>
+                            <img src={user.img} alt="" />
+                            <div className="texts">
+                                <h1>
+                                    {user.name}
+                                </h1>
+                                <button onClick={() => { deletebtn(user.id) }}>Delete</button>
+                            </div>
                         </div>
                     )
                 })

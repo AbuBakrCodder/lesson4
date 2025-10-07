@@ -5,19 +5,25 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default function Modal({ modaln, setuser, modalactive }) {
     let [name, setName] = useState("")
+    let [img, setImg] = useState("")
 
     function getformdata(form) {
-        const formdata = new FormData(form)
-        const carobj = {}
-        for (let [key, value] of formdata.entries()) {
-            carobj[key] = value
+        if (form.name.value.trim() === "" && form.img.value.trim() === "") {
+            alert("Ma'lumot kiriting!!!")
         }
+        else {
+            const formdata = new FormData(form)
+            const carobj = {}
+            for (let [key, value] of formdata.entries()) {
+                carobj[key] = value
+            }
 
-        setuser(prev => [...prev, { ...carobj, id: uuidv4() }])
-        setName("")
-        modaln(false)
-        modalactive(false)
-        console.log(carobj)
+            setuser(prev => [...prev, { ...carobj, id: uuidv4() }])
+            setName("")
+            modaln(false)
+            modalactive(false)
+            console.log(carobj)
+        }
     }
 
     return (
@@ -35,6 +41,13 @@ export default function Modal({ modaln, setuser, modalactive }) {
                     onChange={(e) => setName(e.target.value)}
                     type="text"
                     name="name"
+                />
+                <input
+                    placeholder="Car image url"
+                    value={img}
+                    onChange={(e) => setImg(e.target.value)}
+                    type="text"
+                    name="img"
                 />
                 <button type="submit">Add</button>
                 <button type="button" onClick={() => { modaln(false); modalactive(false) }}>X</button>

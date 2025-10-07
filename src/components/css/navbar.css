@@ -4,7 +4,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0px;
+    padding: 20px 50px;
 }
 
 ul{
@@ -17,4 +17,10 @@ ul{
 
 li a{
     text-decoration: none;
+    color: black;
+    transition: 0.5s all;
+}
+
+li a:hover{
+    color: aqua;
 }
